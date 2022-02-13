@@ -2,7 +2,6 @@
   "name": "haxer_games",
   "version": "0.0.0",
   "scripts": {
-    "build:css": "npx tailwindcss -i ./src/index.css -o ./dist/output.css --watch",
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview"
@@ -18,6 +17,7 @@
     "@typescript-eslint/eslint-plugin": "^4.28.2",
     "@typescript-eslint/parser": "^4.28.2",
     "@vitejs/plugin-react": "1.0.7",
+    "autoprefixer": "^10.4.2",
     "eslint": "^7.30.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-import": "^2.23.4",
@@ -25,9 +25,11 @@
     "eslint-plugin-prettier": "^3.4.0",
     "eslint-plugin-react": "^7.24.0",
     "eslint-plugin-simple-import-sort": "^7.0.0",
+    "postcss": "^8.4.6",
     "prettier": "^2.5.1",
     "tailwindcss": "3.0.18",
     "typescript": "4.4.4",
-    "vite": "2.7.2"
+    "vite": "2.7.2",
+    "vite-tsconfig-paths": "^3.4.0"
   }
 }

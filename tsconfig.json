@@ -14,7 +14,15 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+    "baseUrl": ".",
+    "paths": {
+      "Pages/*": ["src/pages/*"],
+      "Components/*": ["src/components/*"],
+      "Types/*": ["src/types/*"],
+      "Utils/*": ["src/utils/*"]
+    }
   },
+
   "include": ["./src"]
 }

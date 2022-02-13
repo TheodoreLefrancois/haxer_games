@@ -1,16 +1,20 @@
 import './App.css';
 
+import { Motus } from 'Pages/index';
 import { Route, Routes } from 'react-router-dom';
 
-import { Sutom } from './pages';
 function App() {
   return (
-    <>
-      <h1>Welcome to Haxer Games</h1>
-      <Routes>
-        <Route path="/sutom" element={<Sutom />} />
-      </Routes>
-    </>
+    <div className="bg-slate-800 w-full h-[100vh] text-white flex flex-col items-center p-6 divide-y-2 divide-cyan-200">
+      <h1 className="text-5xl tracking-wider text-cyan-500 font-medium mb-8">
+        Haxer Games
+      </h1>
+      <div className="pt-8 w-full">
+        <Routes>
+          <Route path="/motus" element={<Motus />} />
+        </Routes>
+      </div>
+    </div>
   );
 }
 

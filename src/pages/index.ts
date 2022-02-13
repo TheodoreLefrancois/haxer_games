@@ -1,3 +1,3 @@
-import Sutom from './Sutom';
+import Motus from './Motus';
 
-export { Sutom };
+export { Motus };
