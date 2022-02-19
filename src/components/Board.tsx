@@ -13,7 +13,7 @@ function Board({ data }: Iprops) {
           {raw.map((input, i) => (
             <div
               key={index.toString() + i.toString()}
-              className="border-2 border-cyan-500 h-16 w-16 relative">
+              className="border md:border-2 border-cyan-500 h-10 w-10 md:h-16 md:w-16 relative">
               <Case {...input} />
             </div>
           ))}

@@ -7,13 +7,13 @@ interface Iprops {
 }
 function Keyboard({ keys }: Iprops) {
   return (
-    <section className="flex items-center justify-center space-x-2">
-      <div className="keyboard gap-2 w-full">
+    <section className="flex flex-col md:flex-row items-center justify-center space-y-2 md:space-x-2">
+      <div className="keyboard gap-1 md:gap-2 w-full">
         {keys.slice(0, 26).map((key) => (
           <Key key={key.value} {...key} />
         ))}
       </div>
-      <div className="flex flex-col justify-center space-y-2">
+      <div className="flex md:flex-col justify-center space-x-2 md:space-y-2">
         {keys.slice(26).map((key) => (
           <Key key={key.value} {...key} />
         ))}
