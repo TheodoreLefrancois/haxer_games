@@ -20,7 +20,8 @@
       "Pages/*": ["src/pages/*"],
       "Components/*": ["src/components/*"],
       "Types/*": ["src/types/*"],
-      "Utils/*": ["src/utils/*"]
+      "Utils/*": ["src/utils/*"],
+      "Layout/*": ["src/layout/*"]
     }
   },
 
