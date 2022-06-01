@@ -1,7 +1,7 @@
 import './App.css';
 
 import Header from 'Layout/Headers';
-import { Motus } from 'Pages/index';
+import { Motus, Shifumi } from 'Pages/index';
 import { Route, Routes } from 'react-router-dom';
 
 function App() {
@@ -15,6 +15,7 @@ function App() {
         <div className="pt-8 w-full">
           <Routes>
             <Route path="/motus" element={<Motus />} />
+            <Route path="/shifumi" element={<Shifumi />} />
           </Routes>
         </div>
       </div>

@@ -6,6 +6,7 @@ import { keys } from 'Utils/keys';
 interface Iprops {
   searchedWord: string;
 }
+
 function initBoard(wordLength: number, chance: number, firstLetter: string) {
   const board = Array(chance)
     .fill(Array(wordLength).fill({}))
@@ -18,6 +19,7 @@ function initBoard(wordLength: number, chance: number, firstLetter: string) {
     );
   return board;
 }
+
 function generateNewRaw(value: string, rawLength: number) {
   return Array(rawLength)
     .fill({})
@@ -42,13 +44,22 @@ function SecondVue({ searchedWord }: Iprops) {
   const [boardData, setBoardData] = React.useState<Input[][]>(
     initBoard(searchedWord.length, chance, searchedWord[0]),
   );
+
   function handleSubmit() {
+    console.log(input);
+    const unfinishedWord = searchedWord.length !== input.length;
     const success = input.toUpperCase() === searchedWord;
     const fail = chance === currentRawIndex - 1 && !success;
+    if (unfinishedWord) {
+      alert('Missing(s) caracter(s)! \n Please fill all the blank');
+      return;
+    }
     if (success) {
       alert('Congratulations !\n Play Again \n Please reload to play again');
+      return;
     } else if (fail) {
-      alert('You failed try again \n Please reload to play again');
+      alert('You failed! try again \n Please reload to play again');
+      return;
     } else {
       const currentNewRaw = [...boardData[currentRawIndex]].map((char, index) => ({
         value: char.value,
@@ -70,7 +81,9 @@ function SecondVue({ searchedWord }: Iprops) {
 
       setCurrentRawIndex(currentRawIndex + 1);
     }
+    return;
   }
+
   function handleBack() {
     if (input.length === 2) {
       setInput(input.slice(0, input.length - 1));
@@ -92,6 +105,7 @@ function SecondVue({ searchedWord }: Iprops) {
       );
     }
   }
+
   function handleChange(value: string) {
     if (input.includes(' ')) {
       setInput(`${searchedWord[0]}${value}`);
@@ -114,12 +128,13 @@ function SecondVue({ searchedWord }: Iprops) {
       );
     }
   }
-  function handleClick(value: 'DEL' | 'DEL' | string) {
+
+  function handleClick(value: 'Backspace' | 'Enter' | string) {
     switch (value) {
-      case 'DEL':
+      case 'Backspace':
         handleBack();
         break;
-      case 'VAL':
+      case 'Enter':
         handleSubmit();
         break;
       default:
@@ -127,6 +142,16 @@ function SecondVue({ searchedWord }: Iprops) {
         break;
     }
   }
+
+  // function keyPressListener(event: KeyboardEvent) {
+  //   console.log(event.key);
+  //   handleClick(event.key);
+  // }
+
+  // React.useEffect(() => {
+  //   window.addEventListener('keydown', keyPressListener);
+  // }, [input, boardData, currentRawIndex]);
+
   const logicalKeys = keys.map((key) => ({ ...key, action: handleClick }));
 
   return (

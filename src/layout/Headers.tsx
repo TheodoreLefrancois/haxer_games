@@ -26,6 +26,7 @@ function Header() {
           <nav className="flex flex-col items-start py-2 pl-4 w-full divide-y-2 divide-dashed">
             <NavigationButton onClick={() => onNavigate('/')} label="GO BACK HOME" />
             <NavigationButton onClick={() => onNavigate('/motus')} label="MOTUS" />
+            <NavigationButton onClick={() => onNavigate('/shifumi')} label="SHIFUMI" />
           </nav>
         </div>
       )}
