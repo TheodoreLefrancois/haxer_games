@@ -3,13 +3,13 @@ export const specialKeys = [
     disabled: false,
     included: false,
     found: false,
-    value: 'DEL',
+    value: 'Backspace',
   },
   {
     disabled: false,
     included: false,
     found: false,
-    value: 'VAL',
+    value: 'Enter',
   },
 ];
 export const alphabet = 'abcdefghijklmnopqrstuvwxyz'.toUpperCase();

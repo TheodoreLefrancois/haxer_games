@@ -10,7 +10,10 @@ function FirstVue({ searchedWord, setSearchedWord, setIsSelectedWord }: Iprops) 
   return (
     <form
       className="flex flex-col items-center justify-center tracking-widest mt-5"
-      onSubmit={() => setIsSelectedWord(true)}>
+      onSubmit={(e) => {
+        e.preventDefault();
+        setIsSelectedWord(true);
+      }}>
       <label htmlFor="word" className="uppercase">
         Give a word
       </label>

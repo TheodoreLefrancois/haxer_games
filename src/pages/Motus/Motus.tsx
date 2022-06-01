@@ -1,4 +1,4 @@
-import { GameTitle } from 'Components/index';
+import { GameContainer } from 'Components/index';
 import React from 'react';
 
 import FirstVue from './FirstVue';
@@ -9,15 +9,13 @@ function Motus() {
   const [isSelectedWord, setIsSelectedWord] = React.useState(false);
 
   return (
-    <div className="w-full flex justify-center flex-col items-center">
-      <GameTitle title="MOTUS" />
-
+    <GameContainer gameTitle="MOTUS">
       {isSelectedWord ? (
         <SecondVue searchedWord={searchedWord.toUpperCase()} />
       ) : (
         <FirstVue {...{ searchedWord, setSearchedWord, setIsSelectedWord }} />
       )}
-    </div>
+    </GameContainer>
   );
 }
 

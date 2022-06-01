@@ -15,8 +15,9 @@ function Key({ action, value, disabled, found, included }: Iprops) {
           : 'border-cyan-500'
       } ${isCharacter ? 'w-8 md:w-12' : 'w-24'}`}
       disabled={disabled}
+      type="button"
       onClick={() => action(value)}>
-      {value}
+      {value === 'Enter' ? 'VAL' : value === 'Backspace' ? 'DEL' : value}
     </button>
   );
 }
